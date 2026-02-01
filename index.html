@@ -1,126 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Will You Be My Valentine 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine, Dr Babygirl? 💖</title>
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff4d6d, #ff8fab);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-    }
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff003c, #ff4d6d, #ff85b3);
+  overflow-x: hidden;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
+.card {
+  background: #fff0f6;
+  padding: 35px 25px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(255, 0, 60, 0.35);
+  max-width: 380px;
+  width: 92%;
+  animation: popIn 1s ease;
+}
 
-    h1 {
-      color: #ff2e63;
-    }
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
-    img {
-      width: 100%;
-      border-radius: 15px;
-      margin: 15px 0;
-    }
+h1 {
+  color: #ff003c;
+  margin-bottom: 10px;
+}
 
-    button {
-      padding: 12px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      margin: 10px;
-    }
+p {
+  color: #b0003a;
+  font-size: 17px;
+  margin-bottom: 22px;
+}
 
-    .yes {
-      background: #ff2e63;
-      color: white;
-    }
+.photos {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
 
-    .no {
-      background: #ccc;
-      position: absolute;
-    }
+.photos img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff4d6d;
+}
 
-    .heart {
-      position: fixed;
-      color: red;
-      font-size: 20px;
-      animation: float 4s linear infinite;
-    }
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
 
-    @keyframes float {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-100vh); opacity: 0; }
-    }
+button {
+  padding: 13px 26px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    video {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 15px;
-    }
+#yesBtn {
+  background: linear-gradient(135deg, #ff003c, #ff4d6d);
+  color: white;
+  box-shadow: 0 12px 22px rgba(255, 0, 60, 0.4);
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  background: #ffd6e1;
+  color: #b0003a;
+  position: relative;
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ff003c;
+}
+
+.message {
+  display: none;
+  font-size: 22px;
+  color: #ff003c;
+  margin-top: 22px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.proposal {
+  display: none;
+  margin-top: 25px;
+  font-size: 20px;
+  color: #b0003a;
+  animation: fadeIn 1.5s ease;
+}
+
+.video-section {
+  display: none;
+  margin-top: 25px;
+}
+
+video {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 15px 30px rgba(255,0,60,0.4);
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 22px;
+  animation: float 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120vh) scale(1.6); opacity: 0; }
+}
+
   </style>
 </head>
+<body>  <!-- Background Music -->  <audio id="bgMusic" autoplay loop>
+    <source src="your-music.mp3" type="audio/mpeg">
+  </audio>  <div class="card">
+    <h1>Dr Babygirl ❤️</h1><!-- Photos -->
+<div class="photos">
+  <img src="her-photo.jpg" alt="Her">
+  <img src="your-photo.jpg" alt="You">
+</div>
 
-<body>
+<p>
+  You turned my world pink and red 🌹<br>
+  Every heartbeat says only one thing…<br><br>
+  <strong>Will you be my Valentine? 💖</strong>
+</p>
 
-<div class="card">
-  <h1>Will you be my Valentine 💖<br>dr babygirl?</h1>
+<div class="buttons">
+  <button id="yesBtn">Yes, always 💘</button>
+  <button id="noBtn">No 🙈</button>
+</div>
 
-  <img src="her-photo.jpg" alt="Her Photo">
+<div class="hint">Only YES is allowed 😏💗</div>
 
-  <p>You make my world brighter every single day 💕</p>
+<div class="message" id="loveMessage">
+  YAYYYYY 😍💖<br>
+  You just made me the luckiest person alive!
+</div>
 
-  <button class="yes" onclick="yesClicked()">YES 💘</button>
-  <button class="no" id="noBtn">NO 🙈</button>
+<div class="proposal" id="proposalText">
+  Dr Babygirl… 💍<br><br>
+  Today is Valentine’s,<br>
+  tomorrow, next year, and forever —<br>
+  I want it to be <strong>US</strong> ❤️
+</div>
 
+<div class="video-section" id="videoSection">
+  <p><strong>A little something from my heart 🎥💞</strong></p>
   <video controls>
     <source src="our-video.mp4" type="video/mp4">
   </video>
-
-  <audio autoplay loop>
-    <source src="your-music.mp3" type="audio/mpeg">
-  </audio>
 </div>
 
-<script>
-  const noBtn = document.getElementById("noBtn");
+  </div>  <div class="hearts" id="hearts"></div>  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const message = document.getElementById('loveMessage');
+    const proposal = document.getElementById('proposalText');
+    const videoSection = document.getElementById('videoSection');
+    const heartsContainer = document.getElementById('hearts');
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  });
+    // NO button runs away + hearts pop
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 120);
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+      popHearts(x + 40, y + 20);
+    });
 
-  function yesClicked() {
-    for (let i = 0; i < 30; i++) {
-      const heart = document.createElement("div");
-      heart.className = "heart";
-      heart.innerHTML = "❤️";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.top = "100vh";
-      document.body.appendChild(heart);
+    // YES button
+    yesBtn.addEventListener('click', () => {
+      message.style.display = 'block';
+      proposal.style.display = 'block';
+      videoSection.style.display = 'block';
 
-      setTimeout(() => heart.remove(), 4000);
+      for (let i = 0; i < 60; i++) {
+        popHearts(Math.random() * window.innerWidth, window.innerHeight);
+      }
+    });
+
+    function popHearts(x, y) {
+      for (let i = 0; i < 6; i++) {
+        const heart = document.createElement('span');
+        heart.innerHTML = '💖';
+        heart.style.left = x + 'px';
+        heart.style.top = y + 'px';
+        heart.style.animationDuration = (2 + Math.random() * 2) + 's';
+        heartsContainer.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
     }
-    alert("YAY!!! I LOVE YOU 💖💖💖");
-  }
-</script>
-
-</body>
+  </script></body>
 </html>
